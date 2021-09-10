@@ -62,7 +62,7 @@ This Python script will pull Okta logs into a format that is easily parsable by 
       var.api_key: '<token>'
   ```
   
-  ## Method-2: Using Logstash to send logs to Elasticsearch or AWS S3 bucket [output mentioend without authentication, please visit vendor page]
+  ## Method-2: Using Logstash to send logs to Elasticsearch or AWS S3 bucket [Please generate Acess Keys for authenticaion]
   - Create a new configuration file `/etc/logstash/conf.d/okta.yml`
   ```yaml
     input {
@@ -72,16 +72,21 @@ This Python script will pull Okta logs into a format that is easily parsable by 
       }
     }
     output {
-      s3{
+      s3 {
+        #access_key_id => "ACCESS_KEY"
+        #secret_access_key => "SECRET_KEY"
         region => "eu-west-1"
         bucket => "your_bucket"
-        size_file => 2048                        (optional) - Bytes
-        time_file => 5                           (optional) - Minutes
-        codec => "plain"                         (optional)
+        size_file => 2048     (in Bytes)
+        time_file => 5        (in Minutes)
+        codec => "plain"
       }
   
       elasticsearch {
         hosts => ["localhost:9200"]
+        index => "okta-logs-%{+YYYY.MM.dd}"
+        #user => "elastic"
+        #password => "changeme"
       }
     }
   ```
