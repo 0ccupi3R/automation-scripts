@@ -25,7 +25,7 @@ This Python script will pull Okta logs into a format that is easily parsable by 
  * Minute
  * Second
  
-# Run & Background configuration:
+# Run the Script OR Configuration for background:
 1. To run directly in background using python command:
   `python3 okta-log-collector.py &`
   
@@ -62,7 +62,7 @@ This Python script will pull Okta logs into a format that is easily parsable by 
       var.api_key: '<token>'
   ```
   
-  ## Method-2: Using Logstash
+  ## Method-2: Using Logstash to send logs to Elasticsearch or AWS S3 bucket [output mentioend without authentication, please visit vendor page]
   - Create a new configuration file `/etc/logstash/conf.d/okta.yml`
   ```yaml
     input {
@@ -71,10 +71,17 @@ This Python script will pull Okta logs into a format that is easily parsable by 
         start_position => "beginning"
       }
     }
-
     output {
+      s3{
+        region => "eu-west-1"
+        bucket => "your_bucket"
+        size_file => 2048                        (optional) - Bytes
+        time_file => 5                           (optional) - Minutes
+        codec => "plain"                         (optional)
+      }
+  
       elasticsearch {
-        hosts => ["localhost:9200"]  
+        hosts => ["localhost:9200"]
       }
     }
   ```
