@@ -2,12 +2,12 @@
 
 
 ### 1. To update your `Security Group` ingress rules
-Majority of us do not have static ip configured on our Router, which means it keeps getting updated dynamically (auto-assigned). So, with traditional approach, it is a time consuming process to manually update IP in Security Groups ingress rules.
+The majority of us do not have static IP configured on our Router, which means it keeps getting updated dynamically (auto-assigned). So, with a traditional approach to manually update Security Groups ingress rules is a time consuming process.
 
 :astonished: Now what ? Why don't we make it simple for us or even automate it !
 
-#### Prequisites :
-1. AWS Cli configured (with/without SSO). Generate the credentails (using Key-pairs / STS) and validate if it is saved in `~/.aws/credentials`
+#### Prerequisites :
+1. AWS Cli configured (with/without SSO). Generate the credentials (using Key-pairs / STS) and validate if it is saved in `~/.aws/credentials`
 2. [A Script](https://github.com/0ccupi3R/automation-scripts/blob/main/aws-scripts/aws-sg-update.sh), obviously 
 
 #### Steps :
