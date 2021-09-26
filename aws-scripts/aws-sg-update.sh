@@ -1,6 +1,7 @@
 #!/bin/bash
 
-# This script will be used with the arguments - PROTOCOL, PORT, PROFILE
+#
+# This script will be used with these arguments - PROTOCOL, PORT, PROFILE (optional)
 # 
 # Protocol  - all/tcp/udp
 # Port      - 80/80-443/all
