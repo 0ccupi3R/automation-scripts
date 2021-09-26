@@ -23,6 +23,7 @@ alias sg-update="sh /opt/aws-sg-update.sh"
 aws-sg-update.sh udp 53 dev
 ```
 **Note:** `dev` is a aws profile name (use if you have multiple accounts)
+
 **Commandline Output**
 ```json
 {
