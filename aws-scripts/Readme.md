@@ -2,7 +2,7 @@
 
 
 ### 1. To update your `Security Group` ingress rules
-Majority of us do not have static ip configured on our Router, which means it keeps getting updated dynamically (auto-assigned). So, with traditional approach, it is bit time consuming process to manually IP in Security Groups ingress rules.
+Majority of us do not have static ip configured on our Router, which means it keeps getting updated dynamically (auto-assigned). So, with traditional approach, it is a time consuming process to manually update IP in Security Groups ingress rules.
 
 :astonished: Now what ? Why don't we make it simple for us or even automate it !
 
